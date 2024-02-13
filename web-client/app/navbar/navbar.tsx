@@ -25,7 +25,8 @@ export default function Navbar(){
     return (
         <nav className={styles.nav}>
             <Link href="/">
-                <Image width={60} height={60}
+                
+                <Image className={styles.logo} width={70} height={70}
                 src="/fragLogo.jpeg" alt="frag logo"/>
             </Link>
             <h1>Fragrance Tracker</h1>

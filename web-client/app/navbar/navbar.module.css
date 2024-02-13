@@ -4,4 +4,12 @@
     align-items: center;
     padding: 1em;
   }
+
+  .logo {
+    border-radius: 10px;
+  }
+
+  .logo:hover {
+    border-color: black;
+  }
   
