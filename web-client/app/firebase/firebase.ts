@@ -7,11 +7,12 @@ import {
     onAuthStateChanged,
     User} from "firebase/auth";
 import {getFunctions} from "firebase/functions";
+import {apiKey} from './keys';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBgrt4Agp4vILbGRhidl2ocr7rQHrFCCzc",
+  apiKey: apiKey,
   authDomain: "fragrance-tracker.firebaseapp.com",
   projectId: "fragrance-tracker",
   appId: "1:1040977709758:web:7593356f0ea007888e2cef",
