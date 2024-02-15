@@ -1,14 +1,11 @@
 import {httpsCallable} from 'firebase/functions';
 import {functions} from './firebase';
+import {Frag} from '../utils';
 
-const getVideosFunction = httpsCallable(functions, 'getVideos');
+const getFragsFunction = httpsCallable(functions, 'getFrags');
 
-export interface Frag {
-    id?: string,
-    name?: string,
-}
 
-export async function getVideos(){
-    const response = await getVideosFunction();
+export async function getFrags(){
+    const response = await getFragsFunction();
     return response.data as Frag[];
 }
