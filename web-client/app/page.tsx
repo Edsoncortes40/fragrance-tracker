@@ -12,7 +12,7 @@ export default async function Home() {
     <main className={styles.main}>
       {
         frags.map((frag) => (
-          <Link href={"/frag?f=" + frag.Id}>
+          <Link href={"/frag?f=" + frag.Name}>
             <Image src={frag.ImageUrl + ""} alt={frag.Name} width={100} height={100}
             className={styles.cover}/>
           </Link>

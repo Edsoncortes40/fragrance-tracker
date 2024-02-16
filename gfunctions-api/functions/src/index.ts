@@ -26,3 +26,10 @@ export const getFrags = onCall({maxInstances: 1}, async () => {
     .limit(10).get();
   return snapshot.docs.map((doc) => doc.data());
 });
+
+export const getFrag = onCall({maxInstances: 1}, async (req) => {
+  const docName = req.data.fragName;
+  const snapshot = await firestore.collection(fragCollectionId)
+    .doc(docName).get();
+  return snapshot.data();
+});
