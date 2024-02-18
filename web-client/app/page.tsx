@@ -10,14 +10,23 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      {
-        frags.map((frag) => (
-          <Link href={"/frag?f=" + frag.Name}>
-            <Image src={frag.ImageUrl + ""} alt={frag.Name} width={100} height={100}
-            className={styles.cover}/>
-          </Link>
-        ))
-      }
+
+      <div className={styles.fragrances}>
+        {
+          frags.map((frag) => (
+            <div className={styles.fragContainer}>
+              <Link href={"/frag?f=" + frag.Name}>
+                <div className={styles.frag}>
+                    <img className={styles.fragImage} src={frag.ImageUrl + ""} alt={frag.Name} />
+                  
+                    <p className={styles.fragName}>{frag.Name}</p>
+                  
+                </div>
+              </Link>
+            </div>
+          ))
+        }  
+      </div>
       
     </main>
   );

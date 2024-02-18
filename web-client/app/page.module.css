@@ -1,3 +1,36 @@
-.cover {
-  margin: 11px;
+.fragrances{
+  display: flex;
+  margin-top: 25px;
 }
+
+.fragContainer{
+  width: 190px;
+  height: 250px;
+  margin: 15px;
+}
+
+.frag{
+  display: grid;
+  width: 200px;
+  height: 250px;
+}
+
+
+
+.fragImage{
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+}
+
+.fragName{
+  margin: auto;
+}
+
+.fragContainer:hover{
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 10px;
+}
+
