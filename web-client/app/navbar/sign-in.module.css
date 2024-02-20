@@ -14,3 +14,20 @@
     background-color: #bee0fd;
     border: 1px solid transparent;
 }
+
+.addFrag {
+    display: inline-block;
+    border: 1px solid gray;
+    color: #000000;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.addFrag:hover{
+    background-color: #bee0fd;
+    border: 1px solid transparent;
+}
