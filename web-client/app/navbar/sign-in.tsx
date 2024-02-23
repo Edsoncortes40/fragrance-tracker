@@ -15,15 +15,21 @@ export default function SignIn({user}: SignInProps) {
         <Fragment>
             {   user ?
                 (
-                    <Link href="/addFrag">
-                        <button className={styles.addFrag}>
-                            Add Fragrance
-                        </button>
-                    </Link>
+                    <div className={styles.multiBtn}>
+                        <Link href={"/addFrag?u=" + user.uid}>
+                            <button className={styles.addFrag}>
+                                Add Fragrance
+                            </button>
+                        </Link>
+                        {
+                        //<button className={styles.SignIn} onClick={signOut}>
+                        //Sign Out
+                        //</button>
+                        }
+                    </div>
+                    
 
-                    // <button className={styles.SignIn} onClick={signOut}>
-                    // Sign Out
-                    // </button>
+                    
                 ) : (
                     <button className={styles.SignIn} onClick={signInWithGoogle}>
                         Sign In

@@ -31,3 +31,9 @@
     background-color: #bee0fd;
     border: 1px solid transparent;
 }
+
+.multiBtn{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+}

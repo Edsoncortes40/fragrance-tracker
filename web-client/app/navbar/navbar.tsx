@@ -22,6 +22,7 @@ export default function Navbar(){
         return () => unsubscribe();
     });
 
+
     return (
         <nav className={styles.nav}>
             <Link href="/">

@@ -1,12 +1,14 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import {getFrags} from "./firebase/functions";
 import Link from "next/link";
 
 
-export default async function Home() {
-  const frags = await getFrags();
 
+export default async function Home() {
+  
+  const frags = await getFrags();
+  
+  
 
   return (
     <main className={styles.main}>

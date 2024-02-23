@@ -8,6 +8,7 @@ initializeApp();
 
 const firestore = new Firestore();
 const fragCollectionId = "fragrances";
+const userCollectionId = "users";
 
 export const createUser = functions.auth.user().onCreate((user) => {
   const userInfo = {
@@ -17,7 +18,7 @@ export const createUser = functions.auth.user().onCreate((user) => {
     admin: 0,
   };
 
-  firestore.collection("users").doc(user.uid).set(userInfo);
+  firestore.collection(userCollectionId).doc(user.uid).set(userInfo);
   logger.info("User was created: " + JSON.stringify(userInfo));
   return;
 });
@@ -32,5 +33,12 @@ export const getFrag = onCall({maxInstances: 1}, async (req) => {
   const docName = req.data.fragName;
   const snapshot = await firestore.collection(fragCollectionId)
     .doc(docName).get();
+  return snapshot.data();
+});
+
+export const getUser = onCall({maxInstances: 1}, async (req) => {
+  const userId = req.data.userId;
+  const snapshot = await firestore.collection(userCollectionId)
+    .doc(userId).get();
   return snapshot.data();
 });

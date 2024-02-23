@@ -6,3 +6,10 @@ export interface Frag {
     ImageUrl?: string,
     Name: string,
 }
+
+export interface UserInfo{
+    admin: 0,
+    email: string,
+    photoUrl: string, 
+    uid: string,
+}

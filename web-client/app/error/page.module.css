@@ -1,0 +1,20 @@
+.errContainer{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.homeBtn{
+    margin-left:38%;
+    margin-top: 10%;
+    display: inline-block;
+    border: 2px solid gray;
+    color: #2680ff;
+    padding: 10px 20px;
+    border-radius: 18px;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: 1000;
+    cursor: pointer;
+}
