@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import styles from "./page.module.css";
 import { getUserInfo } from "../firebase/functions";
@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 
 
 export default async function AddFrag(){
-    
+
     const uid = useSearchParams().get('u');
     if(uid == ""){
         window.location.assign("/");
@@ -17,6 +17,9 @@ export default async function AddFrag(){
         window.location.assign("/error");
     }
 
+
+    
+
     return (
         <div className={styles.addFrag}>
             <h1>Add a fragrance:</h1>
@@ -24,9 +27,12 @@ export default async function AddFrag(){
             <p>Coming Soon!</p>
            
             <form className={styles.form}>
-                <input className={styles.textbox} type="text" name='name' placeholder='Enter Name Here' required />
-                <input className={styles.textbox} type="email" name='email' placeholder='Enter Description Here' required />
-                <textarea className={styles.textbox} name='message' rows={7} placeholder='Enter Brand Name Here' required></textarea>
+                <input className={styles.textbox} type="text" name="FragName" placeholder="Enter Fragrance Name Here" required />
+                <input className={styles.textbox} type="text" name="Brand" placeholder="Enter Brand Here" required />
+                <input className={styles.textbox} type="text" name="Gender" placeholder="Enter Gender Here" required />
+                <input className={styles.textbox} type="text" name="ImageUrl" placeholder="Enter Image Url Here" required />
+                <textarea className={styles.textbox} name="" rows={7} placeholder="Enter Description" required></textarea>
+                
                 <button type='submit' className={styles.submitBtn}>Submit Fragrance</button>
             </form>
 
