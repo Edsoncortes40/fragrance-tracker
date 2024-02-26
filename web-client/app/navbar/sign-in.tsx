@@ -3,10 +3,10 @@
 import {Fragment} from 'react';
 import styles from './sign-in.module.css';
 import Link from 'next/link';
-import {UserAuth} from "../context/AuthContext";
+import {userAuth} from "../context/AuthContext";
 
 export default function SignIn() {
-    const authContext = UserAuth();
+    const authContext = userAuth();
 
     if (!authContext){
         return (
@@ -25,13 +25,13 @@ export default function SignIn() {
         }
     };
 
-    async function handleSignOut(){
-        try {
-          await signOut();
-        } catch (error) {
-          console.log(error);
-        }
-      };
+    // async function handleSignOut(){
+    //     try {
+    //       await signOut();
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   };
 
 
     return (
@@ -39,7 +39,7 @@ export default function SignIn() {
             {   user ?
                 (
                     <div className={styles.multiBtn}>
-                        <Link href={"/addFrag?u=" + user.uid}>
+                        <Link href={"/addFrag"}>
                             <button className={styles.addFrag}>
                                 Add Fragrance
                             </button>

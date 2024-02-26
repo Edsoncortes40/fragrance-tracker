@@ -63,6 +63,6 @@ export function AuthContextProvider({children}: childrenType){
     )
 }
 
-export function UserAuth(){
+export function userAuth(){
     return useContext(AuthContext);
 } 

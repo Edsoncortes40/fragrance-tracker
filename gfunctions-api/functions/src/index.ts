@@ -42,3 +42,17 @@ export const getUser = onCall({maxInstances: 1}, async (req) => {
     .doc(userId).get();
   return snapshot.data();
 });
+
+export const createFrag = onCall({maxInstances: 1}, async (req) => {
+  const fragInfo = {
+    Brand: req.data.brand,
+    Description: req.data.description,
+    Gender: req.data.gender,
+    ImageUrl: req.data.imageUrl,
+    Name: req.data.name,
+  };
+
+  firestore.collection(fragCollectionId).doc(req.data.name).set(fragInfo);
+  logger.info("Fragrance was added: " + JSON.stringify(fragInfo));
+  return;
+});
