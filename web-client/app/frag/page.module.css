@@ -1,4 +1,23 @@
-.fragImage{
-    length: 13%;
-    width: 13%;
+.fragContainer {
+    padding-top: 25px;
+}
+
+.fragInfo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+   
+.fragImage {
+    height: 340px;
+    width: 340px;
+    border: 1px solid rgb(144, 144, 144);
+    border-radius: 15px;
+}
+
+.fragReviews {
+    padding-left: 20px;
+    padding-top: 20px;
 }

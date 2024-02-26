@@ -40,7 +40,7 @@ export default function SignIn() {
                 (
                     <div className={styles.multiBtn}>
                         <Link href={"/addFrag"}>
-                            <button className={styles.addFrag}>
+                            <button className={styles.btn}>
                                 Add Fragrance
                             </button>
                         </Link>
@@ -52,7 +52,7 @@ export default function SignIn() {
                     </div>
                     
                 ) : (
-                    <button className={styles.SignIn} onClick={handleSignIn}>
+                    <button className={styles.btn} onClick={handleSignIn}>
                         Sign In
                     </button>
                 )

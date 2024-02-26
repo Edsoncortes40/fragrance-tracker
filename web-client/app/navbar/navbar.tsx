@@ -11,10 +11,10 @@ export default function Navbar(){
         <nav className={styles.nav}>
             <Link href="/">
                 
-                <Image className={styles.logo} width={70} height={70}
-                src="/fragLogo.jpeg" alt="frag logo"/>
+                <Image  width={70} height={70} className={styles.logo}
+                src="/fragTrackerLogo.png" alt="frag logo"/>
             </Link>
-            <h1>Fragrance Tracker</h1>
+            <h1 className={styles.title}>Fragrance Tracker</h1>
             <SignIn />
         </nav>
     )

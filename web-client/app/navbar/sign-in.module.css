@@ -1,23 +1,6 @@
-.SignIn {
+.btn {
     display: inline-block;
-    border: 1px solid gray;
-    color: #000000;
-    padding: 10px 20px;
-    border-radius: 18px;
-    font-family: "Roboto", "Arial", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.SignIn:hover{
-    background-color: #bee0fd;
-    border: 1px solid transparent;
-}
-
-.addFrag {
-    display: inline-block;
-    border: 1px solid gray;
+    border: 2px solid green;
     color: #000000;
     padding: 15px 20px;
     border-radius: 10px;
@@ -27,9 +10,9 @@
     cursor: pointer;
 }
 
-.addFrag:hover{
+.btn:hover{
     background-color: #bee0fd;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
 }
 
 .multiBtn{

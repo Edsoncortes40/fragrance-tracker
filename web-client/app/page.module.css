@@ -1,3 +1,8 @@
+.main{
+  margin-top: 70px;
+  margin-bottom: 30s0px;
+}
+
 .fragrances{
   display: flex;
   margin-top: 25px;
@@ -21,6 +26,7 @@
   padding-top: 10px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 15px;
   width: 150px;
   height: 150px;
 }
