@@ -26,4 +26,5 @@ export async function getUserInfo(userId: string){
 
 export async function createFragrance(brand: string, description: string, gender: string, imageUrl: string, name: string){
     await createFragFunction({brand: brand, description: description, gender: gender, imageUrl: imageUrl, name: name});
+    console.log("fragrance has been created!");
 }
