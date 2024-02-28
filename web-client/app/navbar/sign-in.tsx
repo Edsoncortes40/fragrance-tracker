@@ -3,10 +3,10 @@
 import {Fragment} from 'react';
 import styles from './sign-in.module.css';
 import Link from 'next/link';
-import {userAuth} from "../context/AuthContext";
+import {useAuth} from "../context/AuthContext";
 
 export default function SignIn() {
-    const authContext = userAuth();
+    const authContext = useAuth();
 
     if (!authContext){
         return (

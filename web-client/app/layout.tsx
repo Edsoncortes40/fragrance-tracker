@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./navbar/navbar";
 import Footer from "./footer/footer";
 import {AuthContextProvider} from "./context/AuthContext";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <AuthContextProvider>
           <Navbar />
-          {children}
+          <Suspense>
+            {children}
+          </Suspense>
           <Footer />
         </AuthContextProvider>
         

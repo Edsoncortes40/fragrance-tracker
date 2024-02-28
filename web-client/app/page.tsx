@@ -2,13 +2,9 @@ import styles from "./page.module.css";
 import {getFrags} from "./firebase/functions";
 import Link from "next/link";
 
-
-
 export default async function Home() {
   
   const frags = await getFrags();
-  
-  
 
   return (
     <main className={styles.main}>
@@ -16,7 +12,7 @@ export default async function Home() {
       <div className={styles.fragrances}>
         {
           frags.map((frag) => (
-            <div className={styles.fragContainer}>
+            <div className={styles.fragContainer} key={frag.Name}>
               <Link href={"/frag?f=" + frag.Name}>
                 <div className={styles.frag}>
                     <img className={styles.fragImage} src={frag.ImageUrl + ""} alt={frag.Name} />
@@ -33,3 +29,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export const revalidate = 20;

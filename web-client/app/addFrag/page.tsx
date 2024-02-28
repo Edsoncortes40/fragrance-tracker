@@ -1,14 +1,18 @@
 'use client';
 import styles from "./page.module.css";
 import {createFragrance, getUserInfo} from "../firebase/functions";
-import {userAuth} from "../context/AuthContext";
+import {useAuth} from "../context/AuthContext";
 import { FormEvent, useRef } from "react";
 import { useFormState } from "react-dom";
 
 export default async function AddFrag(){
 
     // Get User context for Google Auth info
-    const authContext = userAuth();
+    const authContext = useAuth();
+    const initialState = {
+        message: "",
+      };
+    const [state, formAction] = useFormState(createFrag, initialState);
 
     if (!authContext){
         return (
@@ -21,7 +25,9 @@ export default async function AddFrag(){
 
     // Send user back to home page if not signed in
     if(!user || user.uid == ""){
-        window.location.assign("/");
+        if(typeof window !== "undefined"){
+            window.location.assign("/");
+        }
      }
 
 
@@ -36,11 +42,9 @@ export default async function AddFrag(){
         return {message: "The fragrance has been created!"};
     }
 
-    const initialState = {
-        message: "",
-      };
+    
 
-    const [state, formAction] = useFormState(createFrag, initialState);
+    
     
 
     //check that user isn't null
@@ -48,8 +52,12 @@ export default async function AddFrag(){
         const userInfo = await getUserInfo(user.uid as string);
 
         if(userInfo.admin == 0){
-            window.location.assign("/error");
+            if(typeof window !== "undefined"){
+                window.location.assign("/");
+            }
         }
+
+        
 
         return (
             <div className={styles.addFrag}>

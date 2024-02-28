@@ -1,11 +1,14 @@
 .main{
   margin-top: 70px;
-  margin-bottom: 30s0px;
+  margin-bottom: 30px;
 }
 
 .fragrances{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 25px;
+  margin-bottom: 200px;
 }
 
 .fragContainer{

@@ -5,9 +5,10 @@ import {useSearchParams} from "next/navigation";
 import {getFrag} from "../firebase/functions";
 
 export default async function Frag() {
-  const fragName = useSearchParams().get('f');
+    const fragName = useSearchParams().get('f');
+  
   const frag = await getFrag(fragName as string);
-
+  
   return (
     
     <div className={styles.fragContainer}>
