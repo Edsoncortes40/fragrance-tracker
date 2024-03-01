@@ -5,6 +5,14 @@ export interface Frag {
     Id?: string,
     ImageUrl?: string,
     Name: string,
+    Reviews: Review[],
+}
+
+export interface Review{
+    UserName: string,
+    ImageUrl: string,
+    Rating: number,
+    Review?: string,
 }
 
 export interface UserInfo{
