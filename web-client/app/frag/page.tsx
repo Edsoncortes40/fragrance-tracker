@@ -34,9 +34,9 @@ export default async function Frag() {
                   <img className={styles.userImage} src={review.ImageUrl + ""} alt={"User Image Not Found"} />
 
                   <div className={styles.reviewText}> 
-                    {review.UserName}
-                    {review.Rating}
-                    {review.Review}
+                    <h2 className={styles.username}>{review.UserName}</h2>
+                    <p className={styles.rating}> Rating: {review.Rating}</p>
+                    <p className={styles.reviewDesc}>{review.Review}</p>
                   </div>
                   
                 </div>
