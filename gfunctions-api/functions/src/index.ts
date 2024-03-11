@@ -1,7 +1,7 @@
 import * as functions from "firebase-functions";
 import * as logger from "firebase-functions/logger";
 import {initializeApp} from "firebase-admin/app";
-import {Firestore} from "firebase-admin/firestore";
+import {FieldValue, Firestore} from "firebase-admin/firestore";
 import {onCall} from "firebase-functions/v2/https";
 
 initializeApp();
@@ -54,5 +54,24 @@ export const createFrag = onCall({maxInstances: 1}, async (req) => {
 
   firestore.collection(fragCollectionId).doc(req.data.name).set(fragInfo);
   logger.info("Fragrance was added: " + JSON.stringify(fragInfo));
+  return;
+});
+
+export const createReview = onCall({maxInstances: 1}, async (req) => {
+  const reviewInfo = {
+    ImageUrl: req.data.userImage,
+    Rating: req.data.rating,
+    Review: req.data.review,
+    UserName: req.data.userName,
+  };
+
+  const fragDoc = firestore.collection(fragCollectionId)
+    .doc(req.data.fragrance);
+
+  fragDoc.update({
+    Reviews: FieldValue.arrayUnion(reviewInfo),
+  });
+
+  logger.info("Fragrance was added: " + JSON.stringify(reviewInfo));
   return;
 });
