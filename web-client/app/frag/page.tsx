@@ -32,26 +32,27 @@ export default async function Frag() {
 const {user, signInWithGoogle, signOut} = authContext;
 
   // form function
-  async function createRev(prevState: {message: string}, formData: FormData){
-    // TODO
-    if(user){
-      const userName = user.displayName;
-      const userImage = user.photoURL;
-      const rating = parseInt(formData.get("Rating") as string);
+async function createRev(prevState: {message: string}, formData: FormData){
+  // TODO
+  if(user){
+    const userName = user.displayName;
+    const userImage = user.photoURL;
+    const rating = parseInt(formData.get("Rating") as string);
 
-      const resp = await createReview(fragName as string, 
-                                       userImage as string, 
-                                       rating, 
-                                       formData.get("Review") as string, 
-                                       userName as string);
-  
+    const resp = await createReview(fragName as string, 
+                                      userImage as string, 
+                                      rating, 
+                                      formData.get("Review") as string, 
+                                      userName as string);
+
     if(typeof window !== "undefined"){
       window.location.assign("/");
     }
     return {message: "The fragrance has been created!"};
-    }else{
-      signInWithGoogle();
-    }
+  }else{
+    signInWithGoogle();
+    return {message: "Sign in to create review"};
+  }
     
 }
   
